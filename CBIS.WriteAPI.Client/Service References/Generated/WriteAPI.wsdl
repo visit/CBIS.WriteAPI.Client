@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://cbis.citybreak.com/WriteAPI" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WriteAPI" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://cbis.citybreak.com/WriteAPI" location="http://ipa.cbis.test.citybreak.com/WriteAPI.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IWriteAPI" type="i0:IWriteAPI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProductExists">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/ProductExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductExistsForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/ProductExistsForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProduct">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/CreateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProductForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/CreateProductForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveProduct">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/ArchiveProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveProductForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/ArchiveProductForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParentProduct">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetParentProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParentProductForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetParentProductForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInformation">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInformationForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetInformationForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCategories">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCategoriesForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetCategoriesForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReferences">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetReferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReferencesForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetReferencesForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOccasions">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetOccasions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOccasionsForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetOccasionsForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMedia">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMedia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMediaForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMediaForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRelevance">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetRelevance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRelevanceForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetRelevanceForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetExpiration">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetExpiration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetExpirationForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetExpirationForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRevision">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetRevision" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRevisionForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetRevisionForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPublishDate">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetPublishDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPublishDateForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetPublishDateForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIsHighlight">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetIsHighlight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIsHighlightForSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetIsHighlightForSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupplierExists">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SupplierExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/CreateSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplier">
+      <soap:operation soapAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/UpdateSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WriteAPI">
+    <wsdl:port name="BasicHttpBinding_IWriteAPI" binding="tns:BasicHttpBinding_IWriteAPI">
+      <soap:address location="http://ipa.cbis.test.citybreak.com/WriteAPI.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

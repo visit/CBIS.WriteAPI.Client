@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/CBIS.WriteAPI.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CBIS.WriteAPI.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ipa.cbis.test.citybreak.com/WriteAPI.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ProductReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LocalName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubSystem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductReference" nillable="true" type="tns:ProductReference" />
+  <xs:complexType name="OrganizationReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LocalName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubSystem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrganizationReference" nillable="true" type="tns:OrganizationReference" />
+  <xs:complexType name="ProductWriteResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CbisProduct" nillable="true" type="tns:ProductReference" />
+      <xs:element minOccurs="0" name="HasChanged" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductWriteResult" nillable="true" type="tns:ProductWriteResult" />
+  <xs:complexType name="ArrayOfInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Information" nillable="true" type="tns:Information" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInformation" nillable="true" type="tns:ArrayOfInformation" />
+  <xs:complexType name="Information">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attribute" nillable="true" type="tns:InformationKey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Information" nillable="true" type="tns:Information" />
+  <xs:complexType name="InformationKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttributeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Culture" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InformationKey" nillable="true" type="tns:InformationKey" />
+  <xs:complexType name="InformationBoolean">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Information">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformationBoolean" nillable="true" type="tns:InformationBoolean" />
+  <xs:complexType name="InformationInteger">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Information">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformationInteger" nillable="true" type="tns:InformationInteger" />
+  <xs:complexType name="InformationDouble">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Information">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformationDouble" nillable="true" type="tns:InformationDouble" />
+  <xs:complexType name="InformationString">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Information">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformationString" nillable="true" type="tns:InformationString" />
+  <xs:complexType name="ArrayOfInformationKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InformationKey" nillable="true" type="tns:InformationKey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInformationKey" nillable="true" type="tns:ArrayOfInformationKey" />
+  <xs:complexType name="ArrayOfProductReference">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductReference" nillable="true" type="tns:ProductReference" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductReference" nillable="true" type="tns:ArrayOfProductReference" />
+  <xs:complexType name="ArrayOfOccasion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Occasion" nillable="true" type="tns:Occasion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOccasion" nillable="true" type="tns:ArrayOfOccasion" />
+  <xs:complexType name="Occasion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Arena" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Duration" type="ser:duration" />
+      <xs:element minOccurs="0" name="End" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Friday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Monday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Saturday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Start" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="Sunday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Thursday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Tuesday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Wednesday" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Occasion" nillable="true" type="tns:Occasion" />
+  <xs:complexType name="ArrayOfMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Media" nillable="true" type="tns:Media" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMedia" nillable="true" type="tns:ArrayOfMedia" />
+  <xs:complexType name="Media">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CopyrightBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExternalReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMainMedia" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:anyURI" />
+      <xs:element minOccurs="0" name="ProducedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Translations" nillable="true" type="tns:ArrayOfMediaTranslation" />
+      <xs:element minOccurs="0" name="Type" type="tns:MediaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Media" nillable="true" type="tns:Media" />
+  <xs:complexType name="ArrayOfMediaTranslation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MediaTranslation" nillable="true" type="tns:MediaTranslation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMediaTranslation" nillable="true" type="tns:ArrayOfMediaTranslation" />
+  <xs:complexType name="MediaTranslation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Culture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Keywords" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaTranslation" nillable="true" type="tns:MediaTranslation" />
+  <xs:simpleType name="MediaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Image" />
+      <xs:enumeration value="Video" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MediaType" nillable="true" type="tns:MediaType" />
+  <xs:simpleType name="Relevance">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Local" />
+      <xs:enumeration value="Regional" />
+      <xs:enumeration value="National" />
+      <xs:enumeration value="International" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Relevance" nillable="true" type="tns:Relevance" />
+  <xs:complexType name="OrganizationAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street3" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrganizationAddress" nillable="true" type="tns:OrganizationAddress" />
+</xs:schema>
