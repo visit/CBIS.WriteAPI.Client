@@ -45,6 +45,9 @@
     <Compile Include="CBISClient.cs" />
     <Compile Include="InformationAttributes.cs" />
     <Compile Include="InformationFactory.cs" />
+    <Compile Include="InformationKeyFactory.cs" />
+    <Compile Include="Service References\OrganizationReference.cs" />
+    <Compile Include="Service References\ProductReference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\Generated\Reference.cs">
       <AutoGen>True</AutoGen>

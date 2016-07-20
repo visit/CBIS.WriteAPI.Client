@@ -2,6 +2,18 @@
 <xs:schema xmlns:tns="http://cbis.citybreak.com/WriteAPI" elementFormDefault="qualified" targetNamespace="http://cbis.citybreak.com/WriteAPI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://ipa.cbis.test.citybreak.com/WriteAPI.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CBIS.WriteAPI.Models" />
   <xs:import schemaLocation="http://ipa.cbis.test.citybreak.com/WriteAPI.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ProductExists">
     <xs:complexType>
       <xs:sequence>
@@ -261,7 +273,7 @@
       <xs:sequence>
         <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/CBIS.WriteAPI.Models" minOccurs="0" name="product" nillable="true" type="q59:ProductReference" />
         <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/CBIS.WriteAPI.Models" minOccurs="0" name="toSet" nillable="true" type="q60:ArrayOfMedia" />
-        <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="toDelete" nillable="true" type="q61:ArrayOfanyURI" />
+        <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="toDelete" nillable="true" type="q61:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -276,7 +288,7 @@
         <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/CBIS.WriteAPI.Models" minOccurs="0" name="product" nillable="true" type="q62:ProductReference" />
         <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/CBIS.WriteAPI.Models" minOccurs="0" name="organization" nillable="true" type="q63:OrganizationReference" />
         <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/CBIS.WriteAPI.Models" minOccurs="0" name="toSet" nillable="true" type="q64:ArrayOfMedia" />
-        <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="toDelete" nillable="true" type="q65:ArrayOfanyURI" />
+        <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="toDelete" nillable="true" type="q65:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

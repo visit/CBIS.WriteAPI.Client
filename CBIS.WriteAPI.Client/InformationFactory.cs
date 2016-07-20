@@ -10,21 +10,18 @@ namespace CBIS.WriteAPI.Client
 {
     public class InformationFactory
     {
-        private readonly CultureInfo _culture;
+        public readonly InformationKeyFactory _keyFactory;
+
         public InformationFactory(CultureInfo culture)
         {
-            _culture = culture;
+            _keyFactory = new InformationKeyFactory(culture);
         }
 
         public Information Name(string value)
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 99,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Name(),
                 Value = value
             };
         }
@@ -33,11 +30,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 101,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Introduction(),
                 Value = value
             };
         }
@@ -46,11 +39,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 102,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Description(),
                 Value = value
             };
         }
@@ -59,11 +48,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 103,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Direction(),
                 Value = value
             };
         }
@@ -72,11 +57,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 104,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.OpeningHours(),
                 Value = value
             };
         }
@@ -85,11 +66,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 105,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Entrence(),
                 Value = value
             };
         }
@@ -98,11 +75,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 107,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.PhoneNumberString(),
                 Value = value
             };
         }
@@ -111,11 +84,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 108,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.MobilePhoneString(),
                 Value = value
             };
         }
@@ -124,11 +93,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 109,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Email(),
                 Value = value
             };
         }
@@ -137,11 +102,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 110,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Website(),
                 Value = value
             };
         }
@@ -150,11 +111,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 112,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Other(),
                 Value = value
             };
         }
@@ -163,11 +120,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationDouble()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 113,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Latitude(),
                 Value = value
             };
         }
@@ -176,11 +129,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationDouble()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 114,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Longitude(),
                 Value = value
             };
         }
@@ -189,11 +138,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 117,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.StreetAddress1(),
                 Value = value
             };
         }
@@ -202,11 +147,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 118,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.StreetAddress2(),
                 Value = value
             };
         }
@@ -215,11 +156,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 119,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.StreetAddress3(),
                 Value = value
             };
         }
@@ -228,11 +165,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 120,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.PostalCode(),
                 Value = value
             };
         }
@@ -241,11 +174,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 121,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.CityAddress(),
                 Value = value
             };
         }
@@ -254,11 +183,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 122,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.CountryAddress(),
                 Value = value
             };
         }
@@ -267,11 +192,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 124,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.EventType(),
                 Value = value
             };
         }
@@ -280,11 +201,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 125,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.EventUrl(),
                 Value = value
             };
         }
@@ -293,11 +210,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 126,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.BookUrl(),
                 Value = value
             };
         }
@@ -306,11 +219,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 127,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.AgeLimit(),
                 Value = value
             };
         }
@@ -319,11 +228,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 130,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumRooms(),
                 Value = value
             };
         }
@@ -332,11 +237,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 131,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumFloors(),
                 Value = value
             };
         }
@@ -345,11 +246,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 132,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumConferenceRooms(),
                 Value = value
             };
         }
@@ -358,11 +255,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 133,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumBars(),
                 Value = value
             };
         }
@@ -371,11 +264,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 134,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.YearBuilt(),
                 Value = value
             };
         }
@@ -384,11 +273,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 135,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.LastRenovatedYear(),
                 Value = value
             };
         }
@@ -397,11 +282,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 136,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.KeyPickup(),
                 Value = value
             };
         }
@@ -410,11 +291,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 137,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Capacity(),
                 Value = value
             };
         }
@@ -423,11 +300,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 138,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.FaxAsString(),
                 Value = value
             };
         }
@@ -436,11 +309,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 139,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumSeats(),
                 Value = value
             };
         }
@@ -449,11 +318,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 142,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.PhoneNumberReception(),
                 Value = value
             };
         }
@@ -462,11 +327,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 143,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.AreaCodeReception(),
                 Value = value
             };
         }
@@ -475,11 +336,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 144,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.CountryCodeReception(),
                 Value = value
             };
         }
@@ -488,11 +345,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 145,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.PhoneNumberBooking(),
                 Value = value
             };
         }
@@ -501,11 +354,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 146,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.AreaCodeBooking(),
                 Value = value
             };
         }
@@ -514,11 +363,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 147,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.CountryCodeBooking(),
                 Value = value
             };
         }
@@ -527,11 +372,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 148,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.CheckInStart(),
                 Value = value
             };
         }
@@ -540,11 +381,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 149,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.CheckOutEnd(),
                 Value = value
             };
         }
@@ -553,11 +390,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 150,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Link360(),
                 Value = value
             };
         }
@@ -566,11 +399,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 151,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Classification(),
                 Value = value
             };
         }
@@ -579,11 +408,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 152,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.ExternalLinks(),
                 Value = value
             };
         }
@@ -592,11 +417,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 160,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.ContactPersonName(),
                 Value = value
             };
         }
@@ -605,11 +426,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 161,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.ContactPersonEmail(),
                 Value = value
             };
         }
@@ -618,11 +435,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 162,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.ContactPersonNotes(),
                 Value = value
             };
         }
@@ -631,11 +444,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 166,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfDoublerooms(),
                 Value = value
             };
         }
@@ -644,11 +453,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 167,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfSuites(),
                 Value = value
             };
         }
@@ -657,11 +462,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 168,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfRoomsWithJacuzzi(),
                 Value = value
             };
         }
@@ -670,11 +471,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 169,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfCommunityRooms(),
                 Value = value
             };
         }
@@ -683,11 +480,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 170,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfDisabledRooms(),
                 Value = value
             };
         }
@@ -696,11 +489,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 171,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfSingleRooms(),
                 Value = value
             };
         }
@@ -709,11 +498,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 172,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.MaxInCinema(),
                 Value = value
             };
         }
@@ -722,11 +507,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 173,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.MaxInSchool(),
                 Value = value
             };
         }
@@ -735,11 +516,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 174,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfGroupRooms(),
                 Value = value
             };
         }
@@ -748,11 +525,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 175,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.KitchenDescription(),
                 Value = value
             };
         }
@@ -761,11 +534,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 177,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.History(),
                 Value = value
             };
         }
@@ -774,11 +543,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 179,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Activities(),
                 Value = value
             };
         }
@@ -787,11 +552,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 180,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.County(),
                 Value = value
             };
         }
@@ -800,11 +561,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 181,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.EditorNotes(),
                 Value = value
             };
         }
@@ -813,11 +570,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 193,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.OpeningHoursReception(),
                 Value = value
             };
         }
@@ -826,11 +579,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 194,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.WorthSeeing(),
                 Value = value
             };
         }
@@ -839,11 +588,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 196,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.RoomsInMultipleBuildings(),
                 Value = value
             };
         }
@@ -852,11 +597,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 197,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.ConferenceDescription(),
                 Value = value
             };
         }
@@ -865,11 +606,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 198,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfFamilyRooms(),
                 Value = value
             };
         }
@@ -878,11 +615,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 199,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfDogRooms(),
                 Value = value
             };
         }
@@ -891,11 +624,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 200,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfStudyRooms(),
                 Value = value
             };
         }
@@ -904,11 +633,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 201,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.EmailBooking(),
                 Value = value
             };
         }
@@ -917,11 +642,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 202,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.FaxBookingString(),
                 Value = value
             };
         }
@@ -930,11 +651,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 203,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.OtherPhoneString(),
                 Value = value
             };
         }
@@ -943,11 +660,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 204,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.OtherPhoneDetails(),
                 Value = value
             };
         }
@@ -956,11 +669,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 207,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MaxNoofConfPart(),
                 Value = value
             };
         }
@@ -969,11 +678,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 208,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Noofpeopleinbiggestconferenceroom(),
                 Value = value
             };
         }
@@ -982,11 +687,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 211,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Conferencesalespersonname(),
                 Value = value
             };
         }
@@ -995,11 +696,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 212,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Conferencesalespersonphone(),
                 Value = value
             };
         }
@@ -1008,11 +705,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 213,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Conferencesalescellphone(),
                 Value = value
             };
         }
@@ -1021,11 +714,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 214,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Conferencesalesemail(),
                 Value = value
             };
         }
@@ -1034,11 +723,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 215,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Conferencesalespersonname2(),
                 Value = value
             };
         }
@@ -1047,11 +732,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 216,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Conferencesalesphone2(),
                 Value = value
             };
         }
@@ -1060,11 +741,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 217,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Conferencesalescellphone2(),
                 Value = value
             };
         }
@@ -1073,11 +750,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 218,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Conferencesalesemail2(),
                 Value = value
             };
         }
@@ -1086,11 +759,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 219,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Noofpepsinislands(),
                 Value = value
             };
         }
@@ -1099,11 +768,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 220,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Noofpepsinuseating(),
                 Value = value
             };
         }
@@ -1112,11 +777,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 221,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Noofroomsforconfparticipants(),
                 Value = value
             };
         }
@@ -1125,11 +786,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 222,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Noofbedsforconfparticipants(),
                 Value = value
             };
         }
@@ -1138,11 +795,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 225,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Maxnoofpepsinrestaurant(),
                 Value = value
             };
         }
@@ -1151,11 +804,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 261,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.OrganizerName(),
                 Value = value
             };
         }
@@ -1164,11 +813,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 262,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.CoOrganizer(),
                 Value = value
             };
         }
@@ -1177,11 +822,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 263,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.ReceivingCultureFunds(),
                 Value = value
             };
         }
@@ -1190,11 +831,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 266,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Applicationdeadline(),
                 Value = value
             };
         }
@@ -1203,11 +840,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 268,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Membershiprequired(),
                 Value = value
             };
         }
@@ -1216,11 +849,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 269,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Signuprequired(),
                 Value = value
             };
         }
@@ -1229,11 +858,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 270,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Externalsignuptext(),
                 Value = value
             };
         }
@@ -1242,11 +867,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 271,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Externalsignuplink(),
                 Value = value
             };
         }
@@ -1255,11 +876,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 273,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.PhoneNumberBookingString(),
                 Value = value
             };
         }
@@ -1268,11 +885,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 274,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.CopyText(),
                 Value = value
             };
         }
@@ -1281,11 +894,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 275,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.IncludedInCooperation(),
                 Value = value
             };
         }
@@ -1294,11 +903,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 276,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.SuitableForDisabled(),
                 Value = value
             };
         }
@@ -1307,11 +912,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 288,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.SignupListEmail(),
                 Value = value
             };
         }
@@ -1320,11 +921,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 291,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Maxnumberofaccommodation(),
                 Value = value
             };
         }
@@ -1333,11 +930,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 297,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Zoomlevel(),
                 Value = value
             };
         }
@@ -1346,11 +939,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 301,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfPeopleSocializing(),
                 Value = value
             };
         }
@@ -1359,11 +948,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 302,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfSeatsOutside(),
                 Value = value
             };
         }
@@ -1372,11 +957,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 303,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Vimeolink(),
                 Value = value
             };
         }
@@ -1385,11 +966,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 304,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.UniqueSellingPoint1(),
                 Value = value
             };
         }
@@ -1398,11 +975,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 305,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.UniqueSellingPoint2(),
                 Value = value
             };
         }
@@ -1411,11 +984,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 306,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.UniqueSellingPoint3(),
                 Value = value
             };
         }
@@ -1424,11 +993,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 309,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceFrom(),
                 Value = value
             };
         }
@@ -1437,11 +1002,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 310,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Km(),
                 Value = value
             };
         }
@@ -1450,11 +1011,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 314,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MenuLink(),
                 Value = value
             };
         }
@@ -1463,11 +1020,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 316,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.GeneralRules(),
                 Value = value
             };
         }
@@ -1476,11 +1029,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 322,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.FacilitiesText(),
                 Value = value
             };
         }
@@ -1489,11 +1038,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 324,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.CommercialMessage(),
                 Value = value
             };
         }
@@ -1502,11 +1047,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 325,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Information1(),
                 Value = value
             };
         }
@@ -1515,11 +1056,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 326,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Information2(),
                 Value = value
             };
         }
@@ -1528,11 +1065,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 327,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Information3(),
                 Value = value
             };
         }
@@ -1541,11 +1074,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 328,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.DisabledFacilitiesText(),
                 Value = value
             };
         }
@@ -1554,11 +1083,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 329,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.ApproximatePrice(),
                 Value = value
             };
         }
@@ -1567,11 +1092,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 330,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.ComplementPrice(),
                 Value = value
             };
         }
@@ -1580,11 +1101,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 331,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.FreeEntrance(),
                 Value = value
             };
         }
@@ -1593,11 +1110,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 332,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.FreeEntranceText(),
                 Value = value
             };
         }
@@ -1606,11 +1119,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 333,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NantesPass(),
                 Value = value
             };
         }
@@ -1619,11 +1128,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 334,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.NantesPassText(),
                 Value = value
             };
         }
@@ -1632,11 +1137,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 335,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.GroupBenefitTitle(),
                 Value = value
             };
         }
@@ -1645,11 +1146,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 336,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.GroupBenefitDescription(),
                 Value = value
             };
         }
@@ -1658,11 +1155,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 337,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.GroupBenefitContact(),
                 Value = value
             };
         }
@@ -1671,11 +1164,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 338,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.GroupBenefitLink(),
                 Value = value
             };
         }
@@ -1684,11 +1173,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 339,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.GroupBenefitLinkText(),
                 Value = value
             };
         }
@@ -1697,11 +1182,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 340,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.BusinessBenefitTitle(),
                 Value = value
             };
         }
@@ -1710,11 +1191,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 341,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.BusinessBenefitDescription(),
                 Value = value
             };
         }
@@ -1723,11 +1200,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 342,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.BusinessBenefit(),
                 Value = value
             };
         }
@@ -1736,11 +1209,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 343,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.BusinessBenefitLink(),
                 Value = value
             };
         }
@@ -1749,11 +1218,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 344,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.BusinessBenefitLinkText(),
                 Value = value
             };
         }
@@ -1762,11 +1227,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 345,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.CouncilPublisher(),
                 Value = value
             };
         }
@@ -1775,11 +1236,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 346,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.CouncilPublisherText(),
                 Value = value
             };
         }
@@ -1788,11 +1245,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 347,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.OtherLink(),
                 Value = value
             };
         }
@@ -1801,11 +1254,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 348,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.OtherLinkText(),
                 Value = value
             };
         }
@@ -1814,11 +1263,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 356,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Municipality(),
                 Value = value
             };
         }
@@ -1827,11 +1272,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 357,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MeetingPoint(),
                 Value = value
             };
         }
@@ -1840,11 +1281,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationDouble()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 358,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MeetingTime(),
                 Value = value
             };
         }
@@ -1853,11 +1290,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationDouble()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 361,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfDepartures(),
                 Value = value
             };
         }
@@ -1866,11 +1299,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationDouble()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 362,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.TimeForDeparture(),
                 Value = value
             };
         }
@@ -1879,11 +1308,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 364,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.StartPoint(),
                 Value = value
             };
         }
@@ -1892,11 +1317,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationDouble()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 366,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.TransportTime(),
                 Value = value
             };
         }
@@ -1905,11 +1326,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 371,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfRoom(),
                 Value = value
             };
         }
@@ -1918,11 +1335,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 372,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfBeds(),
                 Value = value
             };
         }
@@ -1931,11 +1344,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 373,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.YoungestParticipants(),
                 Value = value
             };
         }
@@ -1944,11 +1353,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 374,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MinWeight(),
                 Value = value
             };
         }
@@ -1957,11 +1362,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 375,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MinHight(),
                 Value = value
             };
         }
@@ -1970,11 +1371,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 381,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MiniAgeYoung(),
                 Value = value
             };
         }
@@ -1983,11 +1380,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 382,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MinWeightYoung(),
                 Value = value
             };
         }
@@ -1996,11 +1389,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 383,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MaxWeightYoung(),
                 Value = value
             };
         }
@@ -2009,11 +1398,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 384,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MiniAgeAdult(),
                 Value = value
             };
         }
@@ -2022,11 +1407,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 385,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MinWeightAdult(),
                 Value = value
             };
         }
@@ -2035,11 +1416,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 386,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.MaxWeightAdult(),
                 Value = value
             };
         }
@@ -2048,11 +1425,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 387,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.TransportFrom(),
                 Value = value
             };
         }
@@ -2061,11 +1434,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 388,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.TransportTo(),
                 Value = value
             };
         }
@@ -2074,11 +1443,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 389,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Equipment(),
                 Value = value
             };
         }
@@ -2087,11 +1452,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 402,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Currency(),
                 Value = value
             };
         }
@@ -2100,11 +1461,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 403,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfCampingSites(),
                 Value = value
             };
         }
@@ -2113,11 +1470,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 404,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfRestaurant(),
                 Value = value
             };
         }
@@ -2126,11 +1479,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 405,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfAppartments(),
                 Value = value
             };
         }
@@ -2139,11 +1488,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 406,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.SquareMeter(),
                 Value = value
             };
         }
@@ -2152,11 +1497,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 407,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfCabins(),
                 Value = value
             };
         }
@@ -2165,11 +1506,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 415,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.PriceDescription(),
                 Value = value
             };
         }
@@ -2178,11 +1515,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 419,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.CellNumberContact(),
                 Value = value
             };
         }
@@ -2191,11 +1524,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 421,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.PhoneNumber(),
                 Value = value
             };
         }
@@ -2204,11 +1533,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 422,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.PriceTo(),
                 Value = value
             };
         }
@@ -2217,11 +1542,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 424,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Population(),
                 Value = value
             };
         }
@@ -2230,11 +1551,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 425,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Newspapers(),
                 Value = value
             };
         }
@@ -2243,11 +1560,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 428,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DestinationIso(),
                 Value = value
             };
         }
@@ -2256,11 +1569,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 429,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.AirportsIata(),
                 Value = value
             };
         }
@@ -2269,11 +1578,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 430,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Continent(),
                 Value = value
             };
         }
@@ -2282,11 +1587,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 432,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.CheckInLatest(),
                 Value = value
             };
         }
@@ -2295,11 +1596,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 434,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Sponsored(),
                 Value = value
             };
         }
@@ -2308,11 +1605,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 436,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.TitlePartner(),
                 Value = value
             };
         }
@@ -2321,11 +1614,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 437,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.DescriptionPartner(),
                 Value = value
             };
         }
@@ -2334,11 +1623,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 438,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.ContactPartner(),
                 Value = value
             };
         }
@@ -2347,11 +1632,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 439,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.WebSitePartner(),
                 Value = value
             };
         }
@@ -2360,11 +1641,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 440,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Partner(),
                 Value = value
             };
         }
@@ -2373,11 +1650,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 522,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.State(),
                 Value = value
             };
         }
@@ -2386,11 +1659,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 591,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfToilets(),
                 Value = value
             };
         }
@@ -2399,11 +1668,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 592,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfShowers(),
                 Value = value
             };
         }
@@ -2412,11 +1677,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 593,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestCityInMeters(),
                 Value = value
             };
         }
@@ -2425,11 +1686,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 594,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestAlpineSlopeInMeters(),
                 Value = value
             };
         }
@@ -2438,11 +1695,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 595,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestCrossCountryInMeters(),
                 Value = value
             };
         }
@@ -2451,11 +1704,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 596,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestRiverInMeters(),
                 Value = value
             };
         }
@@ -2464,11 +1713,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 597,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestCoastInMeters(),
                 Value = value
             };
         }
@@ -2477,11 +1722,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 598,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestLakeInMeters(),
                 Value = value
             };
         }
@@ -2490,11 +1731,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 599,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestFishingInMeters(),
                 Value = value
             };
         }
@@ -2503,11 +1740,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 600,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestBathInMeters(),
                 Value = value
             };
         }
@@ -2516,11 +1749,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 601,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestGroceryStoreInMeters(),
                 Value = value
             };
         }
@@ -2529,11 +1758,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 602,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestRestaurantInMeters(),
                 Value = value
             };
         }
@@ -2542,11 +1767,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 603,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.NumberOfBedrooms(),
                 Value = value
             };
         }
@@ -2555,11 +1776,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationBoolean()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 630,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Howtogettomeetingpoint(),
                 Value = value
             };
         }
@@ -2568,11 +1785,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 680,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestLiftInMeters(),
                 Value = value
             };
         }
@@ -2581,11 +1794,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 681,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceToNearestSkiRentalInMeters(),
                 Value = value
             };
         }
@@ -2594,11 +1803,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 970,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.PaymentInfo(),
                 Value = value
             };
         }
@@ -2607,11 +1812,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 972,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Facebookpage(),
                 Value = value
             };
         }
@@ -2620,11 +1821,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 973,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Blogpage(),
                 Value = value
             };
         }
@@ -2633,11 +1830,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 974,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Instagrampage(),
                 Value = value
             };
         }
@@ -2646,11 +1839,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 975,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.Pinterestpage(),
                 Value = value
             };
         }
@@ -2659,11 +1848,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationString()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 979,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.ShowExternalUrl(),
                 Value = value
             };
         }
@@ -2672,11 +1857,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 988,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.Distancecitycentre(),
                 Value = value
             };
         }
@@ -2685,11 +1866,7 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationInteger()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 991,
-                    Culture = CultureInfo.InvariantCulture.ToString()
-                },
+                Attribute = _keyFactory.DistanceBeachKm(),
                 Value = value
             };
         }
@@ -2698,15 +1875,9 @@ namespace CBIS.WriteAPI.Client
         {
             return new InformationDouble()
             {
-                Attribute = new InformationKey()
-                {
-                    AttributeId = 1012,
-                    Culture = _culture.ToString()
-                },
+                Attribute = _keyFactory.PriceFrom(),
                 Value = value
             };
         }
-
-
     }
 }

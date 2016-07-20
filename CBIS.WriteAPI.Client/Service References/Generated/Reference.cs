@@ -1045,6 +1045,12 @@ namespace CBIS.WriteAPI.Client.Generated {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://cbis.citybreak.com/WriteAPI", ConfigurationName="Generated.IWriteAPI")]
     public interface IWriteAPI {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/WriteAPI/IWriteAPI/Ping", ReplyAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/PingResponse")]
+        bool Ping();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/WriteAPI/IWriteAPI/Ping", ReplyAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/PingResponse")]
+        System.Threading.Tasks.Task<bool> PingAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/WriteAPI/IWriteAPI/ProductExists", ReplyAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/ProductExistsResponse")]
         bool ProductExists(CBIS.WriteAPI.Client.Generated.ProductReference product);
         
@@ -1142,16 +1148,16 @@ namespace CBIS.WriteAPI.Client.Generated {
         System.Threading.Tasks.Task<CBIS.WriteAPI.Client.Generated.ProductWriteResult> SetOccasionsForSupplierAsync(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.OrganizationReference organization, CBIS.WriteAPI.Client.Generated.Occasion[] toSet, CBIS.WriteAPI.Client.Generated.Occasion[] toDelete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMedia", ReplyAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMediaResponse")]
-        void SetMedia(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.Media[] toSet, System.Uri[] toDelete);
+        void SetMedia(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.Media[] toSet, string[] toDelete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMedia", ReplyAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMediaResponse")]
-        System.Threading.Tasks.Task SetMediaAsync(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.Media[] toSet, System.Uri[] toDelete);
+        System.Threading.Tasks.Task SetMediaAsync(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.Media[] toSet, string[] toDelete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMediaForSupplier", ReplyAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMediaForSupplierResponse")]
-        void SetMediaForSupplier(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.OrganizationReference organization, CBIS.WriteAPI.Client.Generated.Media[] toSet, System.Uri[] toDelete);
+        void SetMediaForSupplier(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.OrganizationReference organization, CBIS.WriteAPI.Client.Generated.Media[] toSet, string[] toDelete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMediaForSupplier", ReplyAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetMediaForSupplierResponse")]
-        System.Threading.Tasks.Task SetMediaForSupplierAsync(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.OrganizationReference organization, CBIS.WriteAPI.Client.Generated.Media[] toSet, System.Uri[] toDelete);
+        System.Threading.Tasks.Task SetMediaForSupplierAsync(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.OrganizationReference organization, CBIS.WriteAPI.Client.Generated.Media[] toSet, string[] toDelete);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetRelevance", ReplyAction="http://cbis.citybreak.com/WriteAPI/IWriteAPI/SetRelevanceResponse")]
         CBIS.WriteAPI.Client.Generated.ProductWriteResult SetRelevance(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.Relevance relevance);
@@ -1257,6 +1263,14 @@ namespace CBIS.WriteAPI.Client.Generated {
         
         public WriteAPIClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public bool Ping() {
+            return base.Channel.Ping();
+        }
+        
+        public System.Threading.Tasks.Task<bool> PingAsync() {
+            return base.Channel.PingAsync();
         }
         
         public bool ProductExists(CBIS.WriteAPI.Client.Generated.ProductReference product) {
@@ -1387,19 +1401,19 @@ namespace CBIS.WriteAPI.Client.Generated {
             return base.Channel.SetOccasionsForSupplierAsync(product, organization, toSet, toDelete);
         }
         
-        public void SetMedia(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.Media[] toSet, System.Uri[] toDelete) {
+        public void SetMedia(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.Media[] toSet, string[] toDelete) {
             base.Channel.SetMedia(product, toSet, toDelete);
         }
         
-        public System.Threading.Tasks.Task SetMediaAsync(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.Media[] toSet, System.Uri[] toDelete) {
+        public System.Threading.Tasks.Task SetMediaAsync(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.Media[] toSet, string[] toDelete) {
             return base.Channel.SetMediaAsync(product, toSet, toDelete);
         }
         
-        public void SetMediaForSupplier(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.OrganizationReference organization, CBIS.WriteAPI.Client.Generated.Media[] toSet, System.Uri[] toDelete) {
+        public void SetMediaForSupplier(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.OrganizationReference organization, CBIS.WriteAPI.Client.Generated.Media[] toSet, string[] toDelete) {
             base.Channel.SetMediaForSupplier(product, organization, toSet, toDelete);
         }
         
-        public System.Threading.Tasks.Task SetMediaForSupplierAsync(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.OrganizationReference organization, CBIS.WriteAPI.Client.Generated.Media[] toSet, System.Uri[] toDelete) {
+        public System.Threading.Tasks.Task SetMediaForSupplierAsync(CBIS.WriteAPI.Client.Generated.ProductReference product, CBIS.WriteAPI.Client.Generated.OrganizationReference organization, CBIS.WriteAPI.Client.Generated.Media[] toSet, string[] toDelete) {
             return base.Channel.SetMediaForSupplierAsync(product, organization, toSet, toDelete);
         }
         
