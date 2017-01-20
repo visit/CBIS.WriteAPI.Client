@@ -30,7 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -46,61 +51,35 @@
     <Compile Include="InformationAttributes.cs" />
     <Compile Include="InformationFactory.cs" />
     <Compile Include="InformationKeyFactory.cs" />
-    <Compile Include="Service References\OrganizationReference.cs" />
-    <Compile Include="Service References\ProductReference.cs" />
+    <Compile Include="Models\Information.cs" />
+    <Compile Include="Models\InformationBoolean.cs" />
+    <Compile Include="Models\InformationDouble.cs" />
+    <Compile Include="Models\InformationInteger.cs" />
+    <Compile Include="Models\InformationKey.cs" />
+    <Compile Include="Models\InformationString.cs" />
+    <Compile Include="Models\ProductReference.cs" />
+    <Compile Include="Models\Query\CreateOrganization.cs" />
+    <Compile Include="Models\Query\CreateProduct.cs" />
+    <Compile Include="Models\Query\EditCategory.cs" />
+    <Compile Include="Models\Query\EditInformation.cs" />
+    <Compile Include="Models\Query\EditMedia.cs" />
+    <Compile Include="Models\Query\EditOccasion.cs" />
+    <Compile Include="Models\Query\EditOrganization.cs" />
+    <Compile Include="Models\Query\EditReference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\Generated\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\OrganizationAddress.cs" />
-    <Compile Include="Service References\Media.cs" />
-    <Compile Include="Service References\Occasion.cs" />
+    <Compile Include="Models\MediaTranslation.cs" />
+    <Compile Include="Models\MediaType.cs" />
+    <Compile Include="Models\OrganizationAddress.cs" />
+    <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\Occasion.cs" />
+    <Compile Include="Models\ProductWriteResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\Generated\CBIS.WriteAPI.Client.Generated.OrganizationReference.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Generated\CBIS.WriteAPI.Client.Generated.ProductWriteResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\Generated\WriteAPI.wsdl" />
-    <None Include="Service References\Generated\WriteAPI.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Generated\WriteAPI1.wsdl" />
-    <None Include="Service References\Generated\WriteAPI2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Generated\WriteAPI3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Generated\WriteAPI4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\Generated\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Generated\WriteAPI.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Generated\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Generated\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\Generated\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

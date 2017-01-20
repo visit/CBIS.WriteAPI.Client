@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using CBIS.WriteAPI.Client.Generated;
+using CBIS.WriteAPI.Client.Models;
+using CBIS.WriteAPI.Client.Models.Query;
+using RestSharp;
 
 namespace CBIS.WriteAPI.Client
 {
     public class CBISClient
     {
-        public readonly WriteAPIClient Client;
+        public readonly RestSharp.RestClient Client;
+        private readonly string Username;
+        private readonly string Password;
 
-        public CBISClient(string endpointConfiguration, string username, string password)
+        public CBISClient(Uri uri, string username, string password)
         {
             if (string.IsNullOrEmpty(username))
             {
@@ -23,9 +29,72 @@ namespace CBIS.WriteAPI.Client
                 throw new ArgumentNullException(nameof(password));
             }
 
-            Client = new WriteAPIClient(endpointConfiguration);
-            Client.ChannelFactory.Credentials.UserName.UserName = username;
-            Client.ChannelFactory.Credentials.UserName.Password = password;
+            Client = new RestSharp.RestClient(uri);
+            this.Password = password;
+            this.Username = username;
+        }
+
+        public bool Ping()
+        {
+            var request = new RestSharp.RestRequest("ping", Method.GET);
+            request.AddHeader("username", this.Username);
+            request.AddHeader("password", this.Password);
+
+            var ret = Client.Execute<bool>(request);
+            return ret.StatusCode != HttpStatusCode.Unauthorized;
+        }
+
+        public bool ProductExists(string reference)
+        {
+            var request = new RestSharp.RestRequest("exists/" + reference, Method.GET);
+            request.AddHeader("username", this.Username);
+            request.AddHeader("password", this.Password);
+
+            var ret = Client.Execute<bool>(request);
+            return ret.Data;
+        }
+
+        public ProductWriteResult ArchiveProduct(string reference)
+        {
+            var request = new RestSharp.RestRequest("archive/" + reference, Method.GET);
+            request.AddHeader("username", this.Username);
+            request.AddHeader("password", this.Password);
+
+            var ret = Client.Execute<ProductWriteResult>(request);
+            return ret.Data;
+        }
+
+        public ProductWriteResult SetInformation(string reference, List<Information> setInformations, List<InformationKey> deleteInformationKeys)
+        {
+            var request = new RestSharp.RestRequest("information/" + reference, Method.GET);
+            request.AddHeader("username", this.Username);
+            request.AddHeader("password", this.Password);
+
+            request.AddBody(new EditInformation()
+            {
+                Set = setInformations,
+                Delete = deleteInformationKeys
+            });
+
+            var ret = Client.Execute<ProductWriteResult>(request);
+            return ret.Data;
+        }
+
+        public ProductWriteResult CreateProduct(string reference, string name, string parent)
+        {
+            var request = new RestSharp.RestRequest("create", Method.GET);
+            request.AddHeader("username", this.Username);
+            request.AddHeader("password", this.Password);
+
+            request.AddBody(new CreateProduct()
+            {
+                Name = name,
+                Product= reference,
+                ParentProduct = parent
+            });
+
+            var ret = Client.Execute<ProductWriteResult>(request);
+            return ret.Data;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using CBIS.WriteAPI.Client;
-using CBIS.WriteAPI.Client.Generated;
+using CBIS.WriteAPI.Client.Models;
 using Microsoft.Win32.SafeHandles;
 
 namespace CBIS.WriteAPI.Example
@@ -30,8 +30,8 @@ namespace CBIS.WriteAPI.Example
                 var password = Console.ReadLine();
                 try
                 {
-                    client = new CBISClient("BasicHttpBinding_IWriteAPI", userName, password);
-                    isLogged = client.Client.Ping();
+                    client = new CBISClient(new Uri("http://localhost:4665/api/"), userName, password);
+                    isLogged = client.Ping();
                 }
                 catch (Exception e)
                 {
@@ -148,7 +148,7 @@ namespace CBIS.WriteAPI.Example
                     case 2:
                         try
                         {
-                            var ret = client.Client.ProductExists(AskForReference());
+                            var ret = client.ProductExists(AskForReference());
                             if (ret)
                             {
                                 Console.WriteLine("Product exists!");
@@ -169,7 +169,7 @@ namespace CBIS.WriteAPI.Example
                     case 3:
                         try
                         {
-                            var ret = client.Client.ArchiveProduct(AskForReference());
+                            var ret = client.ArchiveProduct(AskForReference());
                             if (ret.HasChanged)
                             {
                                 Console.WriteLine("Product has been archived!");
@@ -211,10 +211,10 @@ namespace CBIS.WriteAPI.Example
                         var description = Console.ReadLine();
                         try
                         {
-                            var ret = client.Client.SetInformation(AskForReference(), new Information[1]
+                            var ret = client.SetInformation(AskForReference(), new List<Information>() 
                             {
                                 factory.Description(description)
-                            }, new InformationKey[0]);
+                            }, new List<InformationKey>());
                             if (ret.HasChanged)
                             {
                                 Console.WriteLine("Description updated!");
@@ -255,8 +255,8 @@ namespace CBIS.WriteAPI.Example
 
                         try
                         {
-                            var ret = client.Client.SetInformation(AskForReference(), new Information[0],
-                                                                   new InformationKey[1]
+                            var ret = client.SetInformation(AskForReference(), new List<Information>(), 
+                                                                   new List<InformationKey>()
                                                                    {
                                                                        keyfactory.Description()
                                                                    });
@@ -277,45 +277,6 @@ namespace CBIS.WriteAPI.Example
                         Console.ReadLine();
                         break;
 
-                    case 6:
-                        Console.Write("Url of the picture?");
-                        var url = Console.ReadLine();
-                        Console.Write("Reference of the picture?");
-                        var externalReference = Console.ReadLine();
-                        try
-                        {
-                            var uri = new Uri(url);
-                            client.Client.SetMedia(AskForReference(), new Media[1]
-                            {
-                                new Media(uri, MediaType.Image, true, externalReference)
-                            }, new string[0]);
-                            Console.WriteLine("Image has been sent for download, it will automatically appear on the product if valid.");
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine("Couldn't set image: " + e.ToString());
-                            throw;
-                        }
-                        break;
-
-                    case 7:
-                        Console.Write("Reference of the picture?");
-                        var externalReferenceDel = Console.ReadLine();
-                        try
-                        {
-                            client.Client.SetMedia(AskForReference(), new Media[0], new string[1]
-                            {
-                                externalReferenceDel
-                            });
-                            Console.WriteLine("Image has been sent for removal, it will automatically appear on the product if valid.");
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine("Couldn't set image: " + e.ToString());
-                            throw;
-                        }
-                        break;
-
                     case 8:
                         quit = true;
                         break;
@@ -330,14 +291,11 @@ namespace CBIS.WriteAPI.Example
             return false;
         }
 
-        private static ProductReference AskForReference()
+        private static string AskForReference()
         {
-            Console.WriteLine("Product local name?");
+            Console.WriteLine("Product reference?");
             var id = Console.ReadLine();
-            Console.WriteLine("Product subsystem?");
-            var subsystem = Console.ReadLine();
-
-            return new ProductReference(id, subsystem);
+            return id;
         }
 
         private static bool InitiateProductCreation(CBISClient client)
@@ -347,16 +305,12 @@ namespace CBIS.WriteAPI.Example
             var name = Console.ReadLine();
 
             Console.WriteLine("Product reference:");
-            Console.Write("Local name?");
-            var localName = Console.ReadLine();
-
-            Console.Write("Subsystem?");
-            var subSystem = Console.ReadLine();
+            var reference = Console.ReadLine();
 
             try
             {
-                var ret = client.Client.CreateProduct(new ProductReference(localName, subSystem), name, null);
-                Console.WriteLine("Product created with reference: " + ret.CbisProduct.ToString());
+                var ret = client.CreateProduct(reference, name, null);
+                Console.WriteLine("Product created with reference: " + ret.Reference.ToString());
             }
             catch (Exception e)
             {

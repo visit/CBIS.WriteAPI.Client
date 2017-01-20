@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CBIS.WriteAPI.Client.Generated;
+using CBIS.WriteAPI.Client.Models;
 
 namespace CBIS.WriteAPI.Client
 {

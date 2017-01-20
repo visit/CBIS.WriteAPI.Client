@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace CBIS.WriteAPI.Client.Generated
+﻿namespace CBIS.WriteAPI.Client.Models
 { 
-    partial class OrganizationAddress
+    public class OrganizationAddress
     {
         public OrganizationAddress(string street1, string street2, string street3, string postalCode, string city, string state, string countrycode)
         {
@@ -14,5 +12,19 @@ namespace CBIS.WriteAPI.Client.Generated
             State = state;
             CountryCode = countrycode;
         }
+
+        public string State { get; set; }
+
+        public string CountryCode { get; set; }
+
+        public string City { get; set; }
+
+        public string PostalCode { get; set; }
+
+        public string Street3 { get; set; }
+
+        public string Street1 { get; set; }
+
+        public string Street2 { get; set; }
     }
 }
