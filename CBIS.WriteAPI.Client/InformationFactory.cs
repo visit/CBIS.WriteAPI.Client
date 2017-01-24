@@ -19,7 +19,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Name(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Name(),
                 Value = value
@@ -28,7 +28,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Introduction(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Introduction(),
                 Value = value
@@ -37,7 +37,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Description(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Description(),
                 Value = value
@@ -46,7 +46,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Direction(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Direction(),
                 Value = value
@@ -55,7 +55,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information OpeningHours(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.OpeningHours(),
                 Value = value
@@ -64,7 +64,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Entrence(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Entrence(),
                 Value = value
@@ -73,7 +73,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information PhoneNumberString(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.PhoneNumberString(),
                 Value = value
@@ -82,7 +82,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information MobilePhoneString(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.MobilePhoneString(),
                 Value = value
@@ -91,7 +91,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Email(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Email(),
                 Value = value
@@ -100,7 +100,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Website(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Website(),
                 Value = value
@@ -109,7 +109,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Other(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Other(),
                 Value = value
@@ -118,25 +118,25 @@ namespace CBIS.WriteAPI.Client
 
         public Information Latitude(double value)
         {
-            return new InformationDouble()
+            return new Information()
             {
                 Attribute = _keyFactory.Latitude(),
-                Value = value
+                Value = value.ToString(CultureInfo.InvariantCulture)
             };
         }
 
         public Information Longitude(double value)
         {
-            return new InformationDouble()
+            return new Information()
             {
                 Attribute = _keyFactory.Longitude(),
-                Value = value
+                Value = value.ToString(CultureInfo.InvariantCulture)
             };
         }
 
         public Information StreetAddress1(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.StreetAddress1(),
                 Value = value
@@ -145,7 +145,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information StreetAddress2(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.StreetAddress2(),
                 Value = value
@@ -154,7 +154,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information StreetAddress3(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.StreetAddress3(),
                 Value = value
@@ -163,7 +163,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information PostalCode(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.PostalCode(),
                 Value = value
@@ -172,7 +172,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CityAddress(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CityAddress(),
                 Value = value
@@ -181,25 +181,25 @@ namespace CBIS.WriteAPI.Client
 
         public Information CountryAddress(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.CountryAddress(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information EventType(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.EventType(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information EventUrl(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.EventUrl(),
                 Value = value
@@ -208,7 +208,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information BookUrl(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.BookUrl(),
                 Value = value
@@ -217,52 +217,52 @@ namespace CBIS.WriteAPI.Client
 
         public Information AgeLimit(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.AgeLimit(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumRooms(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumRooms(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumFloors(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumFloors(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumConferenceRooms(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumConferenceRooms(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumBars(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumBars(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information YearBuilt(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.YearBuilt(),
                 Value = value
@@ -271,7 +271,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information LastRenovatedYear(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.LastRenovatedYear(),
                 Value = value
@@ -280,7 +280,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information KeyPickup(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.KeyPickup(),
                 Value = value
@@ -289,16 +289,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information Capacity(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Capacity(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information FaxAsString(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.FaxAsString(),
                 Value = value
@@ -307,16 +307,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information NumSeats(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumSeats(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information PhoneNumberReception(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.PhoneNumberReception(),
                 Value = value
@@ -325,7 +325,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information AreaCodeReception(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.AreaCodeReception(),
                 Value = value
@@ -334,7 +334,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CountryCodeReception(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CountryCodeReception(),
                 Value = value
@@ -343,7 +343,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information PhoneNumberBooking(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.PhoneNumberBooking(),
                 Value = value
@@ -352,7 +352,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information AreaCodeBooking(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.AreaCodeBooking(),
                 Value = value
@@ -361,7 +361,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CountryCodeBooking(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CountryCodeBooking(),
                 Value = value
@@ -370,7 +370,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CheckInStart(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CheckInStart(),
                 Value = value
@@ -379,7 +379,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CheckOutEnd(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CheckOutEnd(),
                 Value = value
@@ -388,7 +388,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Link360(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Link360(),
                 Value = value
@@ -397,16 +397,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information Classification(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Classification(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information ExternalLinks(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.ExternalLinks(),
                 Value = value
@@ -415,7 +415,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information ContactPersonName(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.ContactPersonName(),
                 Value = value
@@ -424,7 +424,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information ContactPersonEmail(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.ContactPersonEmail(),
                 Value = value
@@ -433,7 +433,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information ContactPersonNotes(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.ContactPersonNotes(),
                 Value = value
@@ -442,70 +442,70 @@ namespace CBIS.WriteAPI.Client
 
         public Information NumberOfDoublerooms(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfDoublerooms(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfSuites(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfSuites(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfRoomsWithJacuzzi(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfRoomsWithJacuzzi(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfCommunityRooms(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfCommunityRooms(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfDisabledRooms(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfDisabledRooms(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfSingleRooms(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfSingleRooms(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MaxInCinema(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.MaxInCinema(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MaxInSchool(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.MaxInSchool(),
                 Value = value
@@ -514,16 +514,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information NumberOfGroupRooms(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfGroupRooms(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information KitchenDescription(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.KitchenDescription(),
                 Value = value
@@ -532,7 +532,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information History(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.History(),
                 Value = value
@@ -541,7 +541,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Activities(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Activities(),
                 Value = value
@@ -550,7 +550,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information County(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.County(),
                 Value = value
@@ -559,7 +559,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information EditorNotes(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.EditorNotes(),
                 Value = value
@@ -568,7 +568,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information OpeningHoursReception(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.OpeningHoursReception(),
                 Value = value
@@ -577,7 +577,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information WorthSeeing(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.WorthSeeing(),
                 Value = value
@@ -586,7 +586,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information RoomsInMultipleBuildings(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.RoomsInMultipleBuildings(),
                 Value = value
@@ -595,7 +595,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information ConferenceDescription(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.ConferenceDescription(),
                 Value = value
@@ -604,7 +604,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information NumberOfFamilyRooms(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfFamilyRooms(),
                 Value = value
@@ -613,7 +613,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information NumberOfDogRooms(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfDogRooms(),
                 Value = value
@@ -622,16 +622,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information NumberOfStudyRooms(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfStudyRooms(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information EmailBooking(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.EmailBooking(),
                 Value = value
@@ -640,7 +640,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information FaxBookingString(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.FaxBookingString(),
                 Value = value
@@ -649,7 +649,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information OtherPhoneString(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.OtherPhoneString(),
                 Value = value
@@ -658,7 +658,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information OtherPhoneDetails(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.OtherPhoneDetails(),
                 Value = value
@@ -667,7 +667,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information MaxNoofConfPart(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.MaxNoofConfPart(),
                 Value = value
@@ -676,7 +676,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Noofpeopleinbiggestconferenceroom(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Noofpeopleinbiggestconferenceroom(),
                 Value = value
@@ -685,7 +685,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Conferencesalespersonname(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Conferencesalespersonname(),
                 Value = value
@@ -694,7 +694,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Conferencesalespersonphone(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Conferencesalespersonphone(),
                 Value = value
@@ -703,7 +703,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Conferencesalescellphone(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Conferencesalescellphone(),
                 Value = value
@@ -712,7 +712,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Conferencesalesemail(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Conferencesalesemail(),
                 Value = value
@@ -721,7 +721,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Conferencesalespersonname2(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Conferencesalespersonname2(),
                 Value = value
@@ -730,7 +730,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Conferencesalesphone2(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Conferencesalesphone2(),
                 Value = value
@@ -739,7 +739,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Conferencesalescellphone2(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Conferencesalescellphone2(),
                 Value = value
@@ -748,7 +748,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Conferencesalesemail2(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Conferencesalesemail2(),
                 Value = value
@@ -757,52 +757,52 @@ namespace CBIS.WriteAPI.Client
 
         public Information Noofpepsinislands(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Noofpepsinislands(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Noofpepsinuseating(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Noofpepsinuseating(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Noofroomsforconfparticipants(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Noofroomsforconfparticipants(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Noofbedsforconfparticipants(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Noofbedsforconfparticipants(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Maxnoofpepsinrestaurant(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Maxnoofpepsinrestaurant(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information OrganizerName(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.OrganizerName(),
                 Value = value
@@ -811,7 +811,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CoOrganizer(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CoOrganizer(),
                 Value = value
@@ -820,16 +820,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information ReceivingCultureFunds(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.ReceivingCultureFunds(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Applicationdeadline(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Applicationdeadline(),
                 Value = value
@@ -838,25 +838,25 @@ namespace CBIS.WriteAPI.Client
 
         public Information Membershiprequired(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.Membershiprequired(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Signuprequired(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.Signuprequired(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Externalsignuptext(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Externalsignuptext(),
                 Value = value
@@ -865,7 +865,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Externalsignuplink(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Externalsignuplink(),
                 Value = value
@@ -874,7 +874,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information PhoneNumberBookingString(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.PhoneNumberBookingString(),
                 Value = value
@@ -883,7 +883,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CopyText(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CopyText(),
                 Value = value
@@ -892,25 +892,25 @@ namespace CBIS.WriteAPI.Client
 
         public Information IncludedInCooperation(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.IncludedInCooperation(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information SuitableForDisabled(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.SuitableForDisabled(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information SignupListEmail(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.SignupListEmail(),
                 Value = value
@@ -919,7 +919,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Maxnumberofaccommodation(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Maxnumberofaccommodation(),
                 Value = value
@@ -928,34 +928,34 @@ namespace CBIS.WriteAPI.Client
 
         public Information Zoomlevel(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Zoomlevel(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfPeopleSocializing(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfPeopleSocializing(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfSeatsOutside(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfSeatsOutside(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Vimeolink(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Vimeolink(),
                 Value = value
@@ -964,7 +964,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information UniqueSellingPoint1(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.UniqueSellingPoint1(),
                 Value = value
@@ -973,7 +973,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information UniqueSellingPoint2(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.UniqueSellingPoint2(),
                 Value = value
@@ -982,7 +982,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information UniqueSellingPoint3(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.UniqueSellingPoint3(),
                 Value = value
@@ -991,25 +991,25 @@ namespace CBIS.WriteAPI.Client
 
         public Information DistanceFrom(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceFrom(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Km(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Km(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MenuLink(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.MenuLink(),
                 Value = value
@@ -1018,7 +1018,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information GeneralRules(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.GeneralRules(),
                 Value = value
@@ -1027,7 +1027,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information FacilitiesText(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.FacilitiesText(),
                 Value = value
@@ -1036,7 +1036,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CommercialMessage(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CommercialMessage(),
                 Value = value
@@ -1045,7 +1045,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Information1(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Information1(),
                 Value = value
@@ -1054,7 +1054,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Information2(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Information2(),
                 Value = value
@@ -1063,7 +1063,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Information3(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Information3(),
                 Value = value
@@ -1072,7 +1072,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information DisabledFacilitiesText(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.DisabledFacilitiesText(),
                 Value = value
@@ -1081,7 +1081,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information ApproximatePrice(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.ApproximatePrice(),
                 Value = value
@@ -1090,7 +1090,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information ComplementPrice(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.ComplementPrice(),
                 Value = value
@@ -1099,16 +1099,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information FreeEntrance(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.FreeEntrance(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information FreeEntranceText(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.FreeEntranceText(),
                 Value = value
@@ -1117,16 +1117,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information NantesPass(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.NantesPass(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NantesPassText(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.NantesPassText(),
                 Value = value
@@ -1135,7 +1135,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information GroupBenefitTitle(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.GroupBenefitTitle(),
                 Value = value
@@ -1144,7 +1144,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information GroupBenefitDescription(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.GroupBenefitDescription(),
                 Value = value
@@ -1153,7 +1153,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information GroupBenefitContact(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.GroupBenefitContact(),
                 Value = value
@@ -1162,7 +1162,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information GroupBenefitLink(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.GroupBenefitLink(),
                 Value = value
@@ -1171,7 +1171,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information GroupBenefitLinkText(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.GroupBenefitLinkText(),
                 Value = value
@@ -1180,7 +1180,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information BusinessBenefitTitle(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.BusinessBenefitTitle(),
                 Value = value
@@ -1189,7 +1189,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information BusinessBenefitDescription(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.BusinessBenefitDescription(),
                 Value = value
@@ -1198,7 +1198,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information BusinessBenefit(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.BusinessBenefit(),
                 Value = value
@@ -1207,7 +1207,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information BusinessBenefitLink(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.BusinessBenefitLink(),
                 Value = value
@@ -1216,7 +1216,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information BusinessBenefitLinkText(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.BusinessBenefitLinkText(),
                 Value = value
@@ -1225,16 +1225,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information CouncilPublisher(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.CouncilPublisher(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information CouncilPublisherText(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CouncilPublisherText(),
                 Value = value
@@ -1243,7 +1243,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information OtherLink(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.OtherLink(),
                 Value = value
@@ -1252,7 +1252,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information OtherLinkText(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.OtherLinkText(),
                 Value = value
@@ -1261,7 +1261,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Municipality(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Municipality(),
                 Value = value
@@ -1270,7 +1270,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information MeetingPoint(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.MeetingPoint(),
                 Value = value
@@ -1279,34 +1279,34 @@ namespace CBIS.WriteAPI.Client
 
         public Information MeetingTime(double value)
         {
-            return new InformationDouble()
+            return new Information()
             {
                 Attribute = _keyFactory.MeetingTime(),
-                Value = value
+                Value = value.ToString(CultureInfo.InvariantCulture)
             };
         }
 
         public Information NumberOfDepartures(double value)
         {
-            return new InformationDouble()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfDepartures(),
-                Value = value
+                Value = value.ToString(CultureInfo.InvariantCulture)
             };
         }
 
         public Information TimeForDeparture(double value)
         {
-            return new InformationDouble()
+            return new Information()
             {
                 Attribute = _keyFactory.TimeForDeparture(),
-                Value = value
+                Value = value.ToString(CultureInfo.InvariantCulture)
             };
         }
 
         public Information StartPoint(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.StartPoint(),
                 Value = value
@@ -1315,115 +1315,115 @@ namespace CBIS.WriteAPI.Client
 
         public Information TransportTime(double value)
         {
-            return new InformationDouble()
+            return new Information()
             {
                 Attribute = _keyFactory.TransportTime(),
-                Value = value
+                Value = value.ToString(CultureInfo.InvariantCulture)
             };
         }
 
         public Information NumberOfRoom(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfRoom(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfBeds(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfBeds(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information YoungestParticipants(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.YoungestParticipants(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MinWeight(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.MinWeight(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MinHight(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.MinHight(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MiniAgeYoung(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.MiniAgeYoung(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MinWeightYoung(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.MinWeightYoung(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MaxWeightYoung(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.MaxWeightYoung(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MiniAgeAdult(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.MiniAgeAdult(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MinWeightAdult(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.MinWeightAdult(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information MaxWeightAdult(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.MaxWeightAdult(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information TransportFrom(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.TransportFrom(),
                 Value = value
@@ -1432,7 +1432,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information TransportTo(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.TransportTo(),
                 Value = value
@@ -1441,7 +1441,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Equipment(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Equipment(),
                 Value = value
@@ -1450,7 +1450,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Currency(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Currency(),
                 Value = value
@@ -1459,52 +1459,52 @@ namespace CBIS.WriteAPI.Client
 
         public Information NumberOfCampingSites(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfCampingSites(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfRestaurant(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfRestaurant(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfAppartments(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfAppartments(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information SquareMeter(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.SquareMeter(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfCabins(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfCabins(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information PriceDescription(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.PriceDescription(),
                 Value = value
@@ -1513,7 +1513,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CellNumberContact(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CellNumberContact(),
                 Value = value
@@ -1522,7 +1522,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information PhoneNumber(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.PhoneNumber(),
                 Value = value
@@ -1531,7 +1531,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information PriceTo(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.PriceTo(),
                 Value = value
@@ -1540,7 +1540,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Population(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Population(),
                 Value = value
@@ -1549,7 +1549,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Newspapers(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Newspapers(),
                 Value = value
@@ -1558,7 +1558,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information DestinationIso(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.DestinationIso(),
                 Value = value
@@ -1567,7 +1567,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information AirportsIata(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.AirportsIata(),
                 Value = value
@@ -1576,7 +1576,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Continent(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Continent(),
                 Value = value
@@ -1585,7 +1585,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information CheckInLatest(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.CheckInLatest(),
                 Value = value
@@ -1594,16 +1594,16 @@ namespace CBIS.WriteAPI.Client
 
         public Information Sponsored(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.Sponsored(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information TitlePartner(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.TitlePartner(),
                 Value = value
@@ -1612,7 +1612,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information DescriptionPartner(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.DescriptionPartner(),
                 Value = value
@@ -1621,7 +1621,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information ContactPartner(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.ContactPartner(),
                 Value = value
@@ -1630,7 +1630,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information WebSitePartner(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.WebSitePartner(),
                 Value = value
@@ -1639,7 +1639,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Partner(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Partner(),
                 Value = value
@@ -1648,7 +1648,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information State(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.State(),
                 Value = value
@@ -1657,151 +1657,151 @@ namespace CBIS.WriteAPI.Client
 
         public Information NumberOfToilets(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfToilets(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfShowers(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfShowers(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestCityInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestCityInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestAlpineSlopeInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestAlpineSlopeInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestCrossCountryInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestCrossCountryInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestRiverInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestRiverInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestCoastInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestCoastInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestLakeInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestLakeInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestFishingInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestFishingInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestBathInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestBathInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestGroceryStoreInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestGroceryStoreInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestRestaurantInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestRestaurantInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information NumberOfBedrooms(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.NumberOfBedrooms(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information Howtogettomeetingpoint(bool value)
         {
-            return new InformationBoolean()
+            return new Information()
             {
                 Attribute = _keyFactory.Howtogettomeetingpoint(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestLiftInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestLiftInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceToNearestSkiRentalInMeters(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceToNearestSkiRentalInMeters(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information PaymentInfo(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.PaymentInfo(),
                 Value = value
@@ -1810,7 +1810,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Facebookpage(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Facebookpage(),
                 Value = value
@@ -1819,7 +1819,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Blogpage(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Blogpage(),
                 Value = value
@@ -1828,7 +1828,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Instagrampage(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Instagrampage(),
                 Value = value
@@ -1837,7 +1837,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information Pinterestpage(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.Pinterestpage(),
                 Value = value
@@ -1846,7 +1846,7 @@ namespace CBIS.WriteAPI.Client
 
         public Information ShowExternalUrl(string value)
         {
-            return new InformationString()
+            return new Information()
             {
                 Attribute = _keyFactory.ShowExternalUrl(),
                 Value = value
@@ -1855,28 +1855,28 @@ namespace CBIS.WriteAPI.Client
 
         public Information Distancecitycentre(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.Distancecitycentre(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information DistanceBeachKm(int value)
         {
-            return new InformationInteger()
+            return new Information()
             {
                 Attribute = _keyFactory.DistanceBeachKm(),
-                Value = value
+                Value = value.ToString()
             };
         }
 
         public Information PriceFrom(double value)
         {
-            return new InformationDouble()
+            return new Information()
             {
                 Attribute = _keyFactory.PriceFrom(),
-                Value = value
+                Value = value.ToString(CultureInfo.InvariantCulture)
             };
         }
     }

@@ -56,7 +56,7 @@ namespace CBIS.WriteAPI.Client
 
         public ProductWriteResult ArchiveProduct(string reference)
         {
-            var request = new RestSharp.RestRequest("archive/" + reference, Method.GET);
+            var request = new RestSharp.RestRequest("archive/" + reference, Method.POST);
             request.AddHeader("username", this.Username);
             request.AddHeader("password", this.Password);
 
@@ -66,11 +66,11 @@ namespace CBIS.WriteAPI.Client
 
         public ProductWriteResult SetInformation(string reference, List<Information> setInformations, List<InformationKey> deleteInformationKeys)
         {
-            var request = new RestSharp.RestRequest("information/" + reference, Method.GET);
+            var request = new RestSharp.RestRequest("information/" + reference, Method.POST);
             request.AddHeader("username", this.Username);
             request.AddHeader("password", this.Password);
 
-            request.AddBody(new EditInformation()
+            request.AddJsonBody(new EditInformation()
             {
                 Set = setInformations,
                 Delete = deleteInformationKeys
@@ -82,11 +82,11 @@ namespace CBIS.WriteAPI.Client
 
         public ProductWriteResult CreateProduct(string reference, string name, string parent)
         {
-            var request = new RestSharp.RestRequest("create", Method.GET);
+            var request = new RestSharp.RestRequest("create", Method.POST);
             request.AddHeader("username", this.Username);
             request.AddHeader("password", this.Password);
 
-            request.AddBody(new CreateProduct()
+            request.AddJsonBody(new CreateProduct()
             {
                 Name = name,
                 Product= reference,
@@ -95,6 +95,22 @@ namespace CBIS.WriteAPI.Client
 
             var ret = Client.Execute<ProductWriteResult>(request);
             return ret.Data;
+        }
+
+        public bool SetMedia(string reference, List<Media> set, List<string> delete)
+        {
+            var request = new RestSharp.RestRequest("media/" + reference, Method.POST);
+            request.AddHeader("username", this.Username);
+            request.AddHeader("password", this.Password);
+
+            request.AddJsonBody(new EditMedia()
+            {
+                Set = set,
+                Delete = delete
+            });
+
+            var ret = Client.Execute(request);
+            return ret.StatusCode == HttpStatusCode.NoContent;
         }
     }
 }

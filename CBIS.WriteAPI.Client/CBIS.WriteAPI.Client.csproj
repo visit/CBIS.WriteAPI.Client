@@ -52,11 +52,7 @@
     <Compile Include="InformationFactory.cs" />
     <Compile Include="InformationKeyFactory.cs" />
     <Compile Include="Models\Information.cs" />
-    <Compile Include="Models\InformationBoolean.cs" />
-    <Compile Include="Models\InformationDouble.cs" />
-    <Compile Include="Models\InformationInteger.cs" />
     <Compile Include="Models\InformationKey.cs" />
-    <Compile Include="Models\InformationString.cs" />
     <Compile Include="Models\ProductReference.cs" />
     <Compile Include="Models\Query\CreateOrganization.cs" />
     <Compile Include="Models\Query\CreateProduct.cs" />

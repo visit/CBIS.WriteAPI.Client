@@ -30,7 +30,7 @@ namespace CBIS.WriteAPI.Example
                 var password = Console.ReadLine();
                 try
                 {
-                    client = new CBISClient(new Uri("http://localhost:4665/api/"), userName, password);
+                    client = new CBISClient(new Uri("https://ipa.cbis.test.citybreak.com/api/"), userName, password);
                     isLogged = client.Ping();
                 }
                 catch (Exception e)
@@ -39,8 +39,17 @@ namespace CBIS.WriteAPI.Example
                     Console.WriteLine("Try again.");
                 }
 
-                Console.ReadLine();
-            } while (!isLogged);
+                if (!isLogged)
+                {
+                    Console.WriteLine("Invalid login, try again");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    break;
+                }
+                
+            } while (true);
 
             Console.WriteLine("You are now logged in, let's play!");
             Console.ReadLine();
@@ -277,6 +286,45 @@ namespace CBIS.WriteAPI.Example
                         Console.ReadLine();
                         break;
 
+                    case 6:
+                        Console.Write("Url of the picture?");
+                        var url = Console.ReadLine();
+                        Console.Write("Reference of the picture?");
+                        var externalReference = Console.ReadLine();
+                        try
+                        {
+                            var uri = new Uri(url);
+                            client.SetMedia(AskForReference(), new List<Media>() 
+                            {
+                                new Media(uri, MediaType.Image, true, externalReference)
+                            }, new List<string>());
+                            Console.WriteLine("Image has been sent for download, it will automatically appear on the product if valid.");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Couldn't set image: " + e.ToString());
+                            throw;
+                        }
+                        break;
+
+                    case 7:
+                        Console.Write("Reference of the picture?");
+                        var externalReferenceDel = Console.ReadLine();
+                        try
+                        {
+                            client.SetMedia(AskForReference(), new List<Media>(), new List<string>()
+                            {
+                                externalReferenceDel
+                            });
+                            Console.WriteLine("Image has been sent for removal, it will automatically appear on the product if valid.");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Couldn't set image: " + e.ToString());
+                            throw;
+                        }
+                        break;
+
                     case 8:
                         quit = true;
                         break;
@@ -311,10 +359,12 @@ namespace CBIS.WriteAPI.Example
             {
                 var ret = client.CreateProduct(reference, name, null);
                 Console.WriteLine("Product created with reference: " + ret.Reference.ToString());
+                Console.ReadLine();
             }
             catch (Exception e)
             {
                 Console.WriteLine("Creation failed: " + e);
+                Console.ReadLine();
             }
 
             return false;
