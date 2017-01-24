@@ -1,2 +1,2 @@
 # CBIS.WriteAPI.Client
-C# client for CBIS Write API http://ipa.cbis.citybreak.com/WriteAPI.svc
+C# client for CBIS Write API https://ipa.cbis.test.citybreak.com/
