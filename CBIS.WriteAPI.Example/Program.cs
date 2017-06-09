@@ -131,7 +131,9 @@ namespace CBIS.WriteAPI.Example
                 Console.WriteLine("\t6. Add a picture on a product");
                 Console.WriteLine("\t7. Remove a picture on a product");
                 Console.WriteLine();
-                Console.WriteLine("\t8. Return home");
+                Console.WriteLine("\t8. Add an occasion");
+                Console.WriteLine();
+                Console.WriteLine("\t9. Return home");
                 Console.WriteLine("\t0. Quit");
                 var action = Console.ReadLine();
                 Console.Clear();
@@ -326,6 +328,24 @@ namespace CBIS.WriteAPI.Example
                         break;
 
                     case 8:
+                        Console.Write("Occasion data: Start 2017-06-10 @10:00 and last 8h" + Environment.NewLine);
+                        try
+                        {
+                            client.SetOccasion(AskForReference(), new List<Occasion>()
+                            {
+                                new Occasion(new DateTime(2017, 6, 10), null, new TimeSpan(10, 0, 0), new TimeSpan(8, 0, 0),
+                                null, false, false, false, false, false, false, false)
+                            }, new List<Occasion>());
+                            Console.WriteLine("Occasion has been set.");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Couldn't set occasion: " + e.ToString());
+                            throw;
+                        }
+                        break;
+
+                    case 9:
                         quit = true;
                         break;
 

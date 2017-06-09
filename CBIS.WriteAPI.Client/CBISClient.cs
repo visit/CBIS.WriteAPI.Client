@@ -112,5 +112,21 @@ namespace CBIS.WriteAPI.Client
             var ret = Client.Execute(request);
             return ret.StatusCode == HttpStatusCode.NoContent;
         }
+
+        public bool SetOccasion(string reference, List<Occasion> set, List<Occasion> delete)
+        {
+            var request = new RestSharp.RestRequest("occasion/" + reference, Method.POST);
+            request.AddHeader("username", this.Username);
+            request.AddHeader("password", this.Password);
+
+            request.AddJsonBody(new EditOccasion()
+            {
+                Set = set,
+                Delete = delete
+            });
+
+            var ret = Client.Execute(request);
+            return ret.StatusCode == HttpStatusCode.OK;
+        }
     }
 }

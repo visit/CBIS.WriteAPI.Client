@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace CBIS.WriteAPI.Client.Models
 { 
@@ -19,8 +20,8 @@ namespace CBIS.WriteAPI.Client.Models
 
             Start = start;
             End = end;
-            StartTime = startTime;
-            Duration = duration;
+            StartTime = startTime.ToString();
+            Duration = duration.ToString();
             Arena = arenaId;
             Monday = monday;
             Tuesday = tuesday;
@@ -47,9 +48,9 @@ namespace CBIS.WriteAPI.Client.Models
 
         public int? Arena { get; set; }
 
-        public TimeSpan Duration { get; set; }
+        public string Duration { get; set; }
 
-        public TimeSpan StartTime { get; set; }
+        public string StartTime { get; set; }
 
         public DateTime? End { get; set; }
 
